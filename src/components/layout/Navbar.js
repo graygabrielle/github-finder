@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-export class Navbar extends Component {
+class Navbar extends Component {
   static defaultProps = {
     title: "Github Finder",
     icon: "fab fa-github"
@@ -17,7 +17,7 @@ export class Navbar extends Component {
     return (
       <nav className="navbar bg-primary">
         <h1>
-          <i className={props.icon} />
+          <i className={props.icon} style={{ margin: "0.5rem" }} />
           {props.title}
         </h1>
       </nav>
