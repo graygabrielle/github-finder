@@ -9,6 +9,12 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
+    case GET_USER:
+      return {
+        ...state,
+        loading: false,
+        user: action.payload
+      };
     case SET_ALERT:
       return {
         ...state,
