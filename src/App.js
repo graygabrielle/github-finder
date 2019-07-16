@@ -5,6 +5,7 @@ import User from "./components/users/User";
 import Search from "./components/users/Search";
 import Alert from "./components/layout/Alert";
 import About from "./components/pages/About";
+import NotFound from "./components/pages/NotFound";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import GithubState from "./context/github/GithubState";
 import "./App.css";
@@ -21,6 +22,7 @@ const App = () => {
               <Route exact path="/" component={Search} />
               <Route exact path="/about" component={About} />
               <Route exact path="/user/:login" component={User} />
+              <Route component={NotFound} />
             </Switch>
           </div>
         </div>
