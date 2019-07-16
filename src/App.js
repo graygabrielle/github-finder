@@ -12,11 +12,9 @@ import GithubState from "./context/github/GithubState";
 import "./App.css";
 
 const App = () => {
-  const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [alert, setAlert] = useState(null);
 
   const getUser = async username => {
     setLoading(true);
@@ -42,41 +40,20 @@ const App = () => {
     setLoading(false);
   };
 
-  const clearUsers = () => {
-    setUsers([]);
-    setLoading(false);
-    setAlert(null);
-  };
-
-  const setAlerts = (msg, type) => {
-    setAlert({ msg, type });
-
-    setTimeout(() => setAlert(null), 5000);
-  };
-
-  const clearAlert = () => {
-    setAlert(null);
-  };
-
   return (
     <GithubState>
       <Router>
         <div className="App">
           <Navbar title="Github Finder" icon="fab fa-github" />
           <div className="container">
-            <Alert alert={alert} />
+            <Alert />
             <Switch>
               <Route
                 exact
                 path="/"
                 render={props => (
                   <Fragment>
-                    <Search
-                      clearUsers={clearUsers}
-                      showClear={users.length > 0 ? true : false}
-                      setAlert={setAlerts}
-                      clearAlert={clearAlert}
-                    />
+                    <Search />
                     <Users />
                   </Fragment>
                 )}
