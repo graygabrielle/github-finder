@@ -2,7 +2,6 @@ import React, { useEffect, Fragment, useContext } from "react";
 import Spinner from "../layout/Spinner";
 import Repos from "../repos/Repos";
 import GithubContext from "../../context/github/githubContext";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const User = ({ match }) => {
