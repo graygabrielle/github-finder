@@ -9,6 +9,12 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
+    case GET_REPOS:
+      return {
+        ...state,
+        loading: false,
+        repos: action.payload
+      };
     case GET_USER:
       return {
         ...state,
