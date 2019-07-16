@@ -1,7 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Users from "./components/users/Users";
 import User from "./components/users/User";
 import Search from "./components/users/Search";
 import Alert from "./components/layout/Alert";
@@ -19,22 +18,9 @@ const App = () => {
           <div className="container">
             <Alert />
             <Switch>
-              <Route
-                exact
-                path="/"
-                render={props => (
-                  <Fragment>
-                    <Search />
-                    <Users />
-                  </Fragment>
-                )}
-              />
+              <Route exact path="/" component={Search} />
               <Route exact path="/about" component={About} />
-              <Route
-                exact
-                path="/user/:login"
-                render={props => <User {...props} />}
-              />
+              <Route exact path="/user/:login" component={User} />
             </Switch>
           </div>
         </div>
