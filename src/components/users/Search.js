@@ -21,7 +21,7 @@ const Search = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit} className="form">
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           name="text"
