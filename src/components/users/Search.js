@@ -6,16 +6,17 @@ const Search = () => {
   const githubContext = useContext(GithubContext);
   const [text, setText] = useState("");
 
-  const { clearUsers, users, searchUsers, setAlert } = githubContext;
+  const { clearUsers, users, searchUsers, setAlert, alert } = githubContext;
   const onChange = e => setText(e.target.value);
-
   const onSubmit = e => {
     e.preventDefault();
     if (text === "") {
       setAlert("Please enter something", "light");
     } else {
       searchUsers(text);
-      setText("");
+      if (alert !== null) {
+        setText("");
+      }
     }
   };
 

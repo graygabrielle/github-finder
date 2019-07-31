@@ -40,10 +40,15 @@ const GithubState = props => {
     const res = await axios.get(
       `https://api.github.com/search/users?q=${text}&client_id=${githubClientId}&client_secret=${githubClientSecret}`
     );
+
     dispatch({
       type: SEARCH_USERS,
       payload: res.data.items
     });
+
+    if (res.data.items.length === 0) {
+      setAlert("Sorry, no results for that search", "light");
+    }
   };
 
   //get user
