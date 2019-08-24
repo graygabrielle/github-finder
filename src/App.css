@@ -335,6 +335,8 @@ textarea {
 
 input[type="submit"],
 input[type="text"],
+input[type="email"],
+input[type="password"],
 button {
   -webkit-appearance: none;
   border-radius: 0;
